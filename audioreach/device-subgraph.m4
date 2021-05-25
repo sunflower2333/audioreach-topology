@@ -3,7 +3,7 @@ dnl 	format, min-rate, max-rate, min-channels, max-hcannels,
 dnl	perf-mode, direction, senario-id, container-cap, container-pos,
 dnl	domain, stack-size,
 dnl	interface-type, interface-index, data-format,
-dnl	sg-iid-start, cont-iid-start, mod-iid-start, num-pcms
+dnl	sg-iid-start, cont-iid-start, mod-iid-start
 define(`DEVICE_SG_ADD',
 `undefine(`DEVICE_NAME') dnl'
 `undefine(`DEVICE_DAI_ID') dnl'
@@ -47,6 +47,5 @@ define(`DEVICE_SG_ADD',
 `define(`SG_IID_START', `$20') dnl'
 `define(`CONT_IID_START', `$21') dnl'
 `define(`MOD_IID_START', `$22') dnl'
-`define(`NUM_PCMS', `$23') dnl'
 `define(`NAME_PREFIX', `device') dnl'
 `include($1)') dnl
