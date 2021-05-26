@@ -1,5 +1,5 @@
 include(`util/util.m4') dnl
-dnl AR_SUBGRAPH(index, graph-id, sub-graph-id, perf-mode, dir, sid, ncontainers)
+dnl AR_SUBGRAPH(index, graph-id, sub-graph-id, perf-mode, dir, sid)
 define(`AR_SUBGRAPH',
 `'
 `SectionVendorTuples."NAME_PREFIX.sub_graph$1_tuples" {'
@@ -10,7 +10,6 @@ define(`AR_SUBGRAPH',
 `                AUDIOREACH_TKN_U32_PERF_MODE STR($4)'
 `                AUDIOREACH_TKN_U32_SG_DIRECTION STR($5)'
 `                AUDIOREACH_TKN_U32_SCENARIO_ID STR($6)'
-`                AUDIOREACH_TKN_U32_NUM_CONTAINERS STR($7)'
 `        }'
 `}'
 `'

@@ -1,5 +1,5 @@
 include(`util/util.m4') dnl
-dnl AR_CONTAINER(index, container-id, cap-id, stack-size, graph-pos, domain, nmodules)
+dnl AR_CONTAINER(index, container-id, cap-id, stack-size, graph-pos, domain)
 define(`AR_CONTAINER',
 `'
 `SectionVendorTuples."NAME_PREFIX.container$1_tuples" {'
@@ -10,7 +10,6 @@ define(`AR_CONTAINER',
 `                AUDIOREACH_TKN_U32_STACK_SIZE STR($4)'
 `                AUDIOREACH_TKN_U32_GRAPH_POS STR($5)'
 `                AUDIOREACH_TKN_U32_PROC_DOMAIN STR($6)'
-`                AUDIOREACH_TKN_U32_NUM_MODULES STR($7)'
 `        }'
 `}'
 `'
