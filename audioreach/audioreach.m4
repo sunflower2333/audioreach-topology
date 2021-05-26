@@ -213,3 +213,4 @@ define(`RX_CODEC_DMA_RX_5', `123') dnl
 define(`TX_CODEC_DMA_TX_5', `124') dnl
 define(`RX_CODEC_DMA_RX_6', `125') dnl
 define(`RX_CODEC_DMA_RX_7', `126') dnl
+define(`SND_SOC_AR_TPLG_FE_BE_GRAPH_CTL_MIX', `256') dnl

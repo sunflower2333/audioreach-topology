@@ -1,3 +1,4 @@
+include(`audioreach/audioreach.m4') dnl
 dnl stream_device_list: list the devices or streams from argument list
 define(`stream_device_list',
 `ifelse(`$#', `1', ,
@@ -53,8 +54,8 @@ define(`DEVICE_CAPTURE_MIXER',
 `        }'
 `'
 `	ops."ctl" {'
-`		get "259"'
-`		put "259"'
+`		get "SND_SOC_AR_TPLG_FE_BE_GRAPH_CTL_MIX"'
+`		put "SND_SOC_AR_TPLG_FE_BE_GRAPH_CTL_MIX"'
 `		info "1"'
 `	}'
 `'
@@ -78,8 +79,8 @@ define(`STREAM_PLAYBACK_MIXER',
 `        }'
 `'
 `	ops."ctl" {'
-`		get "259"'
-`		put "259"'
+`		get "SND_SOC_AR_TPLG_FE_BE_GRAPH_CTL_MIX"'
+`		put "SND_SOC_AR_TPLG_FE_BE_GRAPH_CTL_MIX"'
 `		info "1"'
 `	}'
 `'
