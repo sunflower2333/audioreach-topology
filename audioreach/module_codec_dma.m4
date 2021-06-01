@@ -4,7 +4,7 @@ dnl hw-if-type, hw-if-idx, fmt)
 define(`AR_MODULE_CODEC_DMA_RX',
 `'
 `SectionVendorTuples."NAME_PREFIX.codec_dma_rx$1_tuples" {'
-`        tokens "audio_reach_tokens"'
+`        tokens "audioreach_tokens"'
 `'
 `        tuples."word.u32_data" {'
 `                AUDIOREACH_TKN_U32_MODULE_INSTANCE_ID STR($4)'
@@ -46,7 +46,7 @@ dnl hw-if-type, hw-if-idx, fmt)
 define(`AR_MODULE_CODEC_DMA_TX',
 `'
 `SectionVendorTuples."NAME_PREFIX.codec_dma_tx$1_tuples" {'
-`        tokens "audio_reach_tokens"'
+`        tokens "audioreach_tokens"'
 `'
 `        tuples."word.u32_data" {'
 `                AUDIOREACH_TKN_U32_MODULE_INSTANCE_ID STR($4)'

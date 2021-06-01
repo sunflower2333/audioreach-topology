@@ -3,7 +3,7 @@ dnl AR_MODULE_RDSH(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, 
 define(`AR_MODULE_RDSH',
 `'
 `SectionVendorTuples."NAME_PREFIX.rdsh_ep$1_tuples" {'
-`        tokens "audio_reach_tokens"'
+`        tokens "audioreach_tokens"'
 `        tuples."word.u32_data" {'
 `                AUDIOREACH_TKN_U32_MODULE_INSTANCE_ID STR($4)'
 `                AUDIOREACH_TKN_U32_MODULE_ID STR(MODULE_ID_RD_SHARED_MEM_EP)'

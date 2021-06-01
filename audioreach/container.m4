@@ -3,7 +3,7 @@ dnl AR_CONTAINER(index, container-id, cap-id, stack-size, graph-pos, domain)
 define(`AR_CONTAINER',
 `'
 `SectionVendorTuples."NAME_PREFIX.container$1_tuples" {'
-`        tokens "audio_reach_tokens"'
+`        tokens "audioreach_tokens"'
 `        tuples."word.u32_data" {'
 `                AUDIOREACH_TKN_U32_CONAINER_ID STR($2)'
 `                AUDIOREACH_TKN_U32_CAPABILITY_ID STR($3)'

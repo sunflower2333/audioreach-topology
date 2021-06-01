@@ -1,4 +1,4 @@
-`SectionVendorTokens."audio_reach_tokens" {'
+`SectionVendorTokens."audioreach_tokens" {'
 `        AUDIOREACH_TKN_U16_GAIN "1"'
 `        AUDIOREACH_TKN_U32_SUB_GRAPH_ID "2"'
 `        AUDIOREACH_TKN_U32_CONAINER_ID "3"'

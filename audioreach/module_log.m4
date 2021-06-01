@@ -4,7 +4,7 @@ dnl log-code, log-tap-point, log-mode)
 define(`AR_MODULE_LOG',
 `'
 `SectionVendorTuples."NAME_PREFIX.logger$1_tuples" {'
-`        tokens "audio_reach_tokens"'
+`        tokens "audioreach_tokens"'
 `'
 `        tuples."word.u32_data" {'
 `                AUDIOREACH_TKN_U32_MODULE_INSTANCE_ID STR($4)'

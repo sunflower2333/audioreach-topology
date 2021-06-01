@@ -4,7 +4,7 @@ dnl interleav)
 define(`AR_MODULE_PCMENC',
 `'
 `SectionVendorTuples."NAME_PREFIX.pcm_encoder$1_tuples" {'
-`        tokens "audio_reach_tokens"'
+`        tokens "audioreach_tokens"'
 `'
 `        tuples."word.u32_data" {'
 `                AUDIOREACH_TKN_U32_MODULE_INSTANCE_ID STR($4)'
@@ -27,7 +27,7 @@ define(`AR_MODULE_PCMENC',
 `'
 `SectionWidget."NAME_PREFIX.pcm_encoder$1" {'
 `        index STR($1)'
-`        type "buffer"'
+`        type "encoder"'
 `        no_pm "true"'
 `        event_type "1"'
 `        event_flags "15"'
