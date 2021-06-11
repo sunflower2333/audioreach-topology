@@ -7,19 +7,20 @@ include(`audioreach/tokens.m4')
 #
 # Stream SubGraph  for PCM Playback
 # 
-#  ______________________________________________
-# |               Sub Graph 1                    |
-# | [WR_SH] -> [PCM DEC] -> [PCM CONV] -> [LOG]  |- Kcontrol
-# |______________________________________________|
+#  _____________________________________________________
+# |               Sub Graph 1                    	|
+# | [WR_SH] -> [PCM DEC] -> [PCM CONV] -> [VOL]->[LOG]  |- Kcontrol
+# |_____________________________________________________|
 #
 #
+STREAM_MASTER_PLAYBACK_VOLUME_CTRL(1)
 dnl STREAM_SG_PCM_ADD(stream, stream-dai-id, stream-index, 
 dnl 	format, min-rate, max-rate, min-channels, max-channels,
 dnl	perf-mode, direction,
 dnl	senario-id, container-cap, container-pos,
 dnl	domain, stack-size,
 dnl	sg-iid-start, cont-iid-start, mod-iid-start
-STREAM_SG_PCM_ADD(audioreach/subgraph-stream-playback.m4, FRONTEND_DAI_MULTIMEDIA1, 1,
+STREAM_SG_PCM_ADD(audioreach/subgraph-stream-vol-playback.m4, FRONTEND_DAI_MULTIMEDIA1, 1,
 	`S16_LE', 48000, 48000, 2, 2,	
 	APM_SG_PERF_MODE_LOW_LATENCY, APM_SUB_GRAPH_DIRECTION_RX,
 	APM_SUB_GRAPH_SID_AUDIO_PLAYBACK, APM_CONTAINER_CAP_ID_CD, APM_CONT_GRAPH_POS_STREAM,
