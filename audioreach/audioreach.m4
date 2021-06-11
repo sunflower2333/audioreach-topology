@@ -77,6 +77,7 @@ define(`MODULE_ID_PLACEHOLDER_ENCODER', `0x07001008') dnl
 define(`MODULE_ID_PLACEHOLDER_DECODER', `0x07001009') dnl
 define(`MODULE_ID_I2S_SINK', `0x0700100A') dnl
 define(`MODULE_ID_I2S_SOURCE', `0x0700100B') dnl
+define(`MODULE_ID_VOL_CTRL', `0x0700101B') dnl
 dnl Linux frontend dai ids
 define(`FRONTEND_DAI_MULTIMEDIA1', `1') dnl
 define(`FRONTEND_DAI_MULTIMEDIA2', `2') dnl
@@ -214,3 +215,4 @@ define(`TX_CODEC_DMA_TX_5', `124') dnl
 define(`RX_CODEC_DMA_RX_6', `125') dnl
 define(`RX_CODEC_DMA_RX_7', `126') dnl
 define(`SND_SOC_AR_TPLG_FE_BE_GRAPH_CTL_MIX', `256') dnl
+define(`SND_SOC_AR_TPLG_VOL_CTL', `257') dnl
