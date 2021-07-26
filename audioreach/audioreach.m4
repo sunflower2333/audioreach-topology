@@ -42,10 +42,24 @@ define(`PCM_INTERLEAVED', `1') dnl
 define(`PCM_DEINTERLEAVED_PACKED', `2') dnl
 define(`PCM_DEINTERLEAVED_UNPACKED', `3') dnl
 define(`DATA_FORMAT_FIXED_POINT', `1') dnl
+define(`LPAIF_INTF_TYPE_LPAIF', `0') dnl
 define(`LPAIF_INTF_TYPE_RXTX', `1') dnl
 define(`LPAIF_INTF_TYPE_WSA',`2') dnl
 define(`LPAIF_INTF_TYPE_VA', `3') dnl
 define(`LPAIF_INTF_TYPE_AXI', `4') dnl
+define(`I2S_INTF_TYPE_PRIMARY', `0') dnl
+define(`I2S_INTF_TYPE_SECONDARY', `1') dnl
+define(`I2S_INTF_TYPE_TERTIARY', `2') dnl
+define(`I2S_INTF_TYPE_QUATERNARY', `3') dnl
+define(`I2S_INTF_TYPE_QUINARY', `4') dnl
+define(`SD_LINE_IDX_I2S_SD0', `1') dnl
+define(`SD_LINE_IDX_I2S_SD1', `2') dnl
+define(`SD_LINE_IDX_I2S_SD2', `3') dnl
+define(`SD_LINE_IDX_I2S_SD3', `4') dnl
+define(`SD_LINE_IDX_I2S_QUAD01', `5') dnl
+define(`SD_LINE_IDX_I2S_QUAD23', `6') dnl
+define(`SD_LINE_IDX_I2S_6CHS', `7') dnl
+define(`SD_LINE_IDX_I2S_8CHS', `8') dnl
 define(`CODEC_INTF_IDX_RX0', `1') dnl
 define(`CODEC_INTF_IDX_TX0', `1') dnl
 define(`CODEC_INTF_IDX_RX1', `2') dnl
