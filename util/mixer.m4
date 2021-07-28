@@ -18,7 +18,7 @@ define(`STREAM_DEVICE_CAPTURE_MIXER',
 `        ]'
 `'
 `	data ['
-`                "stream.sub_graph$1_data"'
+`                "stream$1.sub_graph1_data"'
 `	]'
 `}')
 dnl
@@ -35,7 +35,7 @@ define(`STREAM_DEVICE_PLAYBACK_MIXER',
 `        ]'
 `'
 `	data ['
-`                "device.sub_graph$1_data"'
+`                "device$1.sub_graph1_data"'
 `	]'
 `}')
 dnl
@@ -64,10 +64,10 @@ define(`DEVICE_CAPTURE_MIXER',
 `	]'
 `}')
 dnl
-dnl STREAM_PLAYBACK_MIXER(stream-index)
+dnl STREAM_PLAYBACK_MIXER(stream-index, sg-index)
 define(`STREAM_PLAYBACK_MIXER',
 `'
-`SectionControlMixer."PCM$1" {'
+`SectionControlMixer."MultiMedia$1" {'
 `	reg "-1"'
 `	index STR($1)'
 `	max "1"'
@@ -85,7 +85,7 @@ define(`STREAM_PLAYBACK_MIXER',
 `	}'
 `'
 `	data ['
-`                "NAME_PREFIX.sub_graph$1_data"'
+`                "NAME_PREFIX.sub_graph$2_data"'
 `	]'
 `}')
 dnl
