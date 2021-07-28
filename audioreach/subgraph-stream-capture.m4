@@ -16,20 +16,37 @@ dnl
 # |  PCM(n)                                      |
 # |______________________________________________|
 #
+undefine(`PCM_PERF_MODE') dnl
+undefine(`PCM_DIRECTION') dnl
+undefine(`CONT_SENARIO_ID') dnl
+undefine(`CONT_CAP') dnl
+undefine(`CONT_POSITION') dnl
+undefine(`PCM_DOMAIN_ID') dnl
+undefine(`CONT_STACK_SIZE') dnl
+
+define(`PCM_PERF_MODE', APM_SG_PERF_MODE_LOW_LATENCY) dnl'
+define(`PCM_DIRECTION', APM_SUB_GRAPH_DIRECTION_TX) dnl'
+define(`CONT_SENARIO_ID', APM_SG_PERF_MODE_LOW_LATENCY) dnl'
+define(`CONT_CAP', APM_CONTAINER_CAP_ID_CD) dnl'
+define(`CONT_POSITION', APM_CONT_GRAPH_POS_GLOBAL_DEV) dnl'
+define(`PCM_DOMAIN_ID', APM_PROC_DOMAIN_ID_ADSP) dnl'
+define(`CONT_STACK_SIZE', 8192) dnl'
+
 define(`LOG_MODULE_IID', MOD_IID_START) dnl
 define(`PCMCNV_MODULE_IID', eval(MOD_IID_START + 1)) dnl
 define(`PCMENC_MODULE_IID', eval(MOD_IID_START + 2)) dnl
 define(`RDSH_MODULE_IID', eval(MOD_IID_START + 3)) dnl
-define(`SG_INDEX', PCM_INDEX) dnl
-define(`CONTAINER_INDEX', PCM_INDEX) dnl
+define(`SG_INDEX', 1) dnl
+define(`CONTAINER_INDEX', 1) dnl
+define(`MOD_INDEX', 1) dnl
 dnl
-dnl STREAM_CAPTURE_ROUTE(stream-index)
+dnl STREAM_CAPTURE_ROUTE(stream-index, dai-id)
 define(`STREAM_CAPTURE_ROUTE',
 `'
 `SectionGraph."NAME_PREFIX.$1 Graph" {'
 `        index STR($1)'
 `        lines ['
-`                "NAME_PREFIX.logger$1, , MultiMedia$1 Mixer"'
+`                "NAME_PREFIX.logger$1, , MultiMedia$2 Mixer"'
 `                "NAME_PREFIX.pcm_converter$1, , NAME_PREFIX.logger$1"'
 `                "NAME_PREFIX.pcm_encoder$1, , NAME_PREFIX.pcm_converter$1"'
 `                "NAME_PREFIX.rdsh_ep$1, , NAME_PREFIX.pcm_encoder$1"'
@@ -43,10 +60,9 @@ AR_SUBGRAPH(SG_INDEX, PCM_DAI_ID, SG_IID_START, PCM_PERF_MODE, PCM_DIRECTION, CO
 AR_CONTAINER(CONTAINER_INDEX, CONT_IID_START,  CONT_CAP, CONT_STACK_SIZE, CONT_POSITION, PCM_DOMAIN_ID)
 
 dnl AR_MODULE_LOG(index, sgidx, container-idx, iid,               maxip-ports, max-op-ports, in-ports, outports, src-mod, src-port, dst-mod, dst-port,
-AR_MODULE_LOG(PCM_INDEX,    SG_INDEX, CONTAINER_INDEX, LOG_MODULE_IID,    1, 1, 2, 1, 1, 2, 0x000019af, 1, 0)
-AR_MODULE_PCMCNV(PCM_INDEX, SG_INDEX, CONTAINER_INDEX, PCMCNV_MODULE_IID, 1, 1, 2, 1, 1, 2, PCM_INTERLEAVED)
-AR_MODULE_PCMENC(PCM_INDEX, SG_INDEX, CONTAINER_INDEX, PCMENC_MODULE_IID, 1, 1, 2, 1, 1, 2, PCM_INTERLEAVED)
-AR_MODULE_RDSH(PCM_INDEX,   SG_INDEX, CONTAINER_INDEX, RDSH_MODULE_IID,   1, 0, 2, 0, 1, 0)
+AR_MODULE_LOG(MOD_INDEX,    SG_INDEX, CONTAINER_INDEX, LOG_MODULE_IID,    1, 1, 2, 1, 1, 2, 0x000019af, 1, 0)
+AR_MODULE_PCMCNV(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, PCMCNV_MODULE_IID, 1, 1, 2, 1, 1, 2, PCM_INTERLEAVED)
+AR_MODULE_PCMENC(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, PCMENC_MODULE_IID, 1, 1, 2, 1, 1, 2, PCM_INTERLEAVED)
+AR_MODULE_RDSH(MOD_INDEX,   SG_INDEX, CONTAINER_INDEX, RDSH_MODULE_IID,   1, 0, 2, 0, 1, 0)
 
-dnl STREAM_CAPTURE_MIXER(PCM_INDEX)
-STREAM_CAPTURE_ROUTE(PCM_INDEX) 
+STREAM_CAPTURE_ROUTE(MOD_INDEX, PCM_DAI_ID) 
