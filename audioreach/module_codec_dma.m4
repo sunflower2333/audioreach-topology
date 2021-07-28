@@ -1,6 +1,6 @@
 include(`util/util.m4') dnl
 dnl AR_MODULE_CODEC_DMA_RX(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port,
-dnl hw-if-type, hw-if-idx, fmt)
+dnl hw-if-type, hw-if-idx, fmt, dev-name)
 define(`AR_MODULE_CODEC_DMA_RX',
 `'
 `SectionVendorTuples."NAME_PREFIX.codec_dma_rx$1_tuples" {'
@@ -27,9 +27,10 @@ define(`AR_MODULE_CODEC_DMA_RX',
 `'
 `SectionWidget."NAME_PREFIX.codec_dma_rx$1" {'
 `        index STR($1)'
-`        type "buffer"'
+`        type "aif_in"'
 `        no_pm "true"'
 `        event_type "1"'
+`        stream_name "$14 Playback"'
 `        event_flags "15"'
 `        subseq "10"'
 `        data ['
@@ -40,7 +41,7 @@ define(`AR_MODULE_CODEC_DMA_RX',
 `}') dnl
 dnl
 dnl AR_MODULE_CODEC_DMA_TX(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port,
-dnl hw-if-type, hw-if-idx, fmt)
+dnl hw-if-type, hw-if-idx, fmt, dev-name)
 define(`AR_MODULE_CODEC_DMA_TX',
 `'
 `SectionVendorTuples."NAME_PREFIX.codec_dma_tx$1_tuples" {'
@@ -67,10 +68,11 @@ define(`AR_MODULE_CODEC_DMA_TX',
 `'
 `SectionWidget."NAME_PREFIX.codec_dma_tx$1" {'
 `        index STR($1)'
-`        type "buffer"'
+`        type "aif_out"'
 `        no_pm "true"'
 `        event_type "1"'
 `        event_flags "15"'
+`        stream_name "$14 Capture"'
 `        subseq "10"'
 `        data ['
 `                "NAME_PREFIX.sub_graph$2_data"'

@@ -1,6 +1,6 @@
 include(`util/util.m4') dnl
 dnl AR_MODULE_I2S_RX(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port,
-dnl hw-if-type, hw-if-idx, fmt, sd-line-idx)
+dnl hw-if-type, hw-if-idx, fmt, sd-line-idx, dev-name)
 define(`AR_MODULE_I2S_RX',
 `'
 `SectionVendorTuples."NAME_PREFIX.i2s_rx$1_tuples" {'
@@ -18,7 +18,7 @@ define(`AR_MODULE_I2S_RX',
 `                AR_TKN_U32_MODULE_HW_IF_TYPE STR($11)'
 `                AR_TKN_U32_MODULE_HW_IF_IDX STR($12)'
 `                AR_TKN_U32_MODULE_FMT_DATA STR($13)'
-`                AR_TKN_U32_MODULE_SD_LINE_IDX STR(1)'
+`                AR_TKN_U32_MODULE_SD_LINE_IDX STR($14)'
 `        }'
 `}'
 `'
@@ -28,8 +28,9 @@ define(`AR_MODULE_I2S_RX',
 `'
 `SectionWidget."NAME_PREFIX.i2s_rx$1" {'
 `        index STR($1)'
-`        type "buffer"'
+`        type "aif_in"'
 `        no_pm "true"'
+`        stream_name "$15 Playback"'
 `        event_type "1"'
 `        event_flags "15"'
 `        subseq "10"'
