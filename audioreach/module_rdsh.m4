@@ -1,5 +1,5 @@
 include(`util/util.m4') dnl
-dnl AR_MODULE_RDSH(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port)
+dnl AR_MODULE_RDSH(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port, pcm-idx)
 define(`AR_MODULE_RDSH',
 `'
 `SectionVendorTuples."NAME_PREFIX.rdsh_ep$1_tuples" {'
@@ -24,7 +24,7 @@ define(`AR_MODULE_RDSH',
 `        index STR($1)'
 `        type "aif_out"'
 `        no_pm "true"'
-`        stream_name "MultiMedia$1 Capture"'
+`        stream_name "MultiMedia$11 Capture"'
 `        event_type "1"'
 `        event_flags "15"'
 `        subseq "10"'

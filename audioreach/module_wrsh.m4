@@ -1,5 +1,5 @@
 include(`util/util.m4') dnl
-dnl AR_MODULE_WRSH(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port)
+dnl AR_MODULE_WRSH(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port, pcm-index)
 define(`AR_MODULE_WRSH',
 `'
 `SectionVendorTuples."NAME_PREFIX.wrsh_ep$1_tuples" {'
@@ -24,7 +24,7 @@ define(`AR_MODULE_WRSH',
 `        index STR($1)'
 `        type "aif_in"'
 `        no_pm "true"'
-`        stream_name "MultiMedia$1 Playback"'
+`        stream_name "MultiMedia$11 Playback"'
 `        event_type "1"'
 `        event_flags "15"'
 `        subseq "10"'
