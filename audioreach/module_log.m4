@@ -29,8 +29,6 @@ define(`AR_MODULE_LOG',
 `        index STR($1)'
 `        type "buffer"'
 `        no_pm "true"'
-`        event_type "1"'
-`        event_flags "15"'
 `        subseq "10"'
 `        data ['
 `                "NAME_PREFIX.sub_graph$2_data"'

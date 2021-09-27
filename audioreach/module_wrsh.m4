@@ -25,8 +25,6 @@ define(`AR_MODULE_WRSH',
 `        type "aif_in"'
 `        no_pm "true"'
 `        stream_name "MultiMedia$11 Playback"'
-`        event_type "1"'
-`        event_flags "15"'
 `        subseq "10"'
 `        data ['
 `                "NAME_PREFIX.sub_graph$2_data"'

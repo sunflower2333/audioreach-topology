@@ -31,8 +31,6 @@ define(`AR_MODULE_I2S_RX',
 `        type "aif_in"'
 `        no_pm "true"'
 `        stream_name "$15 Playback"'
-`        event_type "1"'
-`        event_flags "15"'
 `        subseq "10"'
 `        data ['
 `                "NAME_PREFIX.sub_graph$2_data"'

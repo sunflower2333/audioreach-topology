@@ -27,8 +27,6 @@ define(`AR_MODULE_PCMENC',
 `        index STR($1)'
 `        type "encoder"'
 `        no_pm "true"'
-`        event_type "1"'
-`        event_flags "15"'
 `        subseq "10"'
 `        data ['
 `                "NAME_PREFIX.sub_graph$2_data"'
