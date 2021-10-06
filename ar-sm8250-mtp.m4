@@ -13,11 +13,11 @@ include(`audioreach/tokens.m4')
 # |______________________________________________|
 #
 dnl Playback MultiMedia1
-STREAM_SG_PCM_ADD(audioreach/subgraph-stream-playback.m4, FRONTEND_DAI_MULTIMEDIA1,
+STREAM_SG_PCM_ADD(audioreach/subgraph-stream-vol-playback.m4, FRONTEND_DAI_MULTIMEDIA1,
 	`S16_LE', 48000, 48000, 2, 2,	
 	0x00004001, 0x00004001, 0x00006001)
 dnl Playback MultiMedia2
-STREAM_SG_PCM_ADD(audioreach/subgraph-stream-playback.m4, FRONTEND_DAI_MULTIMEDIA2,
+STREAM_SG_PCM_ADD(audioreach/subgraph-stream-vol-playback.m4, FRONTEND_DAI_MULTIMEDIA2,
 	`S16_LE', 48000, 48000, 2, 2,	
 	0x00004002, 0x00004002, 0x00006010)
 dnl Capture MultiMedia3
@@ -44,7 +44,7 @@ dnl	sg-iid-start, cont-iid-start, mod-iid-start
 dnl WSA Playback
 DEVICE_SG_ADD(audioreach/subgraph-device-codec-dma-playback.m4, `WSA_CODEC_DMA_RX_0', WSA_CODEC_DMA_RX_0,
 	`S16_LE', 48000, 48000, 2, 2,	
-	LPAIF_INTF_TYPE_WSA, CODEC_INTF_IDX_RX0, 0 DATA_FORMAT_FIXED_POINT,
+	LPAIF_INTF_TYPE_WSA, CODEC_INTF_IDX_RX0, 0, DATA_FORMAT_FIXED_POINT,
 	0x00004005, 0x00004005, 0x00006050)
 dnl
 dnl Secondary MI2S Playback
