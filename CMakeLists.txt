@@ -3,8 +3,8 @@
 cmake_minimum_required(VERSION 3.10)
 # Array of "input-file-name;output-file-name;"
 set(TPLGS
-	"ar-sm8250-rb5\;ar-sm8250-rb5\;"
-	"ar-sm8250-mtp\;ar-sm8250-mpt\;"
+	"Qualcomm-RB5-WSA8815-Speakers-DMIC0\;Qualcomm-RB5-WSA8815-Speakers-DMIC0\;"
+	"SM8250-MTP-WCD9380-WSA8810-VA-DMIC\;SM8250-MTP-WCD9380-WSA8810-VA-DMIC\;"
 )
 
 add_custom_target(topologies ALL)
