@@ -30,7 +30,7 @@ define(`AR_MODULE_I2S_RX',
 `        index STR($1)'
 `        type "aif_in"'
 `        no_pm "true"'
-`        stream_name "$15 Playback"'
+`        stream_name "$15 MI2S Playback"'
 `        subseq "10"'
 `        data ['
 `                "NAME_PREFIX.sub_graph$2_data"'

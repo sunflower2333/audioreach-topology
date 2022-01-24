@@ -44,10 +44,10 @@ dnl 	format, min-rate, max-rate, min-channels, max-channels,
 dnl	interface-type, interface-index, sd-line-idx, data-format,
 dnl	sg-iid-start, cont-iid-start, mod-iid-start
 dnl
-DEVICE_SG_ADD(audioreach/subgraph-device-i2s-playback.m4, `SECONDARY_MI2S_RX', SECONDARY_MI2S_RX,
+DEVICE_SG_ADD(audioreach/subgraph-device-i2s-playback.m4, `Secondary', SECONDARY_MI2S_RX,
 	`S16_LE', 48000, 48000, 2, 2,	
 	LPAIF_INTF_TYPE_LPAIF, I2S_INTF_TYPE_SECONDARY, SD_LINE_IDX_I2S_SD0, DATA_FORMAT_FIXED_POINT,
-	0x00004005, 0x00004005, 0x00006050)
+	0x00004005, 0x00004005, 0x00006050, `SECONDARY_MI2S_RX')
 dnl
 DEVICE_SG_ADD(audioreach/subgraph-device-codec-dma-playback.m4, `RX_CODEC_DMA_RX_0', RX_CODEC_DMA_RX_0,
 	`S16_LE', 48000, 48000, 2, 2,	
@@ -70,8 +70,8 @@ dnl
 STREAM_DEVICE_PLAYBACK_ROUTE(RX_CODEC_DMA_RX_0, ``RX_CODEC_DMA_RX_0 Audio Mixer'', ``MultiMedia1, stream1.logger1'', ``MultiMedia2, stream2.logger1'')
 STREAM_DEVICE_PLAYBACK_ROUTE(SECONDARY_MI2S_RX, ``SECONDARY_MI2S_RX Audio Mixer'', ``MultiMedia1, stream1.logger1'', ``MultiMedia2, stream2.logger1'')
 dnl
-STREAM_DEVICE_CAPTURE_MIXER(FRONTEND_DAI_MULTIMEDIA3, ``VA_CODEC_DMA_TX_0'')
-STREAM_DEVICE_CAPTURE_MIXER(FRONTEND_DAI_MULTIMEDIA4, ``TX_CODEC_DMA_TX_3'')
+STREAM_DEVICE_CAPTURE_MIXER(FRONTEND_DAI_MULTIMEDIA3, ``VA_CODEC_DMA_TX_0'', ``TX_CODEC_DMA_TX_3'')
+STREAM_DEVICE_CAPTURE_MIXER(FRONTEND_DAI_MULTIMEDIA4, ``VA_CODEC_DMA_TX_0'', ``TX_CODEC_DMA_TX_3'')
 dnl
 STREAM_DEVICE_CAPTURE_ROUTE(FRONTEND_DAI_MULTIMEDIA3, ``MultiMedia3 Mixer'', ``VA_CODEC_DMA_TX_0, device110.logger1'', ``TX_CODEC_DMA_TX_3, device120.logger1'')
 STREAM_DEVICE_CAPTURE_ROUTE(FRONTEND_DAI_MULTIMEDIA4, ``MultiMedia4 Mixer'', ``VA_CODEC_DMA_TX_0, device110.logger1'', ``TX_CODEC_DMA_TX_3, device120.logger1'')

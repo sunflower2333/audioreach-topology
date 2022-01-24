@@ -32,4 +32,5 @@ define(`DEVICE_SG_ADD',
 `define(`CONT_IID_START', `$14') dnl'
 `define(`MOD_IID_START', `$15') dnl'
 `define(`NAME_PREFIX', `device$3') dnl'
+`define(`MIXER_PREFIX', ``$16'') dnl'
 `include($1)') dnl

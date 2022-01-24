@@ -44,10 +44,10 @@ dnl
 dnl DEVICE_PLAYBACK_ROUTE(stream-index, dai-id)
 define(`DEVICE_PLAYBACK_ROUTE',
 `'
-`SectionGraph."NAME_PREFIX.$1 $2 Graph" {'
+`SectionGraph."NAME_PREFIX.$1 $3 Graph" {'
 `        index STR($1)'
 `        lines ['
-`                "NAME_PREFIX.logger$1, , $2 Audio Mixer"'
+`                "NAME_PREFIX.logger$1, , $3 Audio Mixer"'
 `                "NAME_PREFIX.i2s_rx$1, , NAME_PREFIX.logger$1"'
 `                "$2 MI2S Playback, , NAME_PREFIX.i2s_rx$1"'
 `        ]'
@@ -59,5 +59,5 @@ AR_CONTAINER(CONTAINER_INDEX, CONT_IID_START, CONT_CAP, CONT_STACK_SIZE, CONT_PO
 
 AR_MODULE_LOG(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, 	LOG_MODULE_IID, 1, 1, 2, 1, 1, 2, 0x000019ab, 1, 0)
 AR_MODULE_I2S_RX(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, 	I2S_MODULE_IID, 1, 0, 2, 0, 1, 0, DEVICE_INTF_TYPE, DEVICE_INTF_INDEX, DEVICE_DATA_FORMAT, DEVICE_SD_LINE_IDX, `DEVICE_NAME') 
-DEVICE_PLAYBACK_ROUTE(MOD_INDEX, `DEVICE_NAME') 
+DEVICE_PLAYBACK_ROUTE(MOD_INDEX, `DEVICE_NAME', `MIXER_PREFIX') 
 
