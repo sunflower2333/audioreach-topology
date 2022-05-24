@@ -44,10 +44,10 @@ dnl
 dnl DEVICE_PLAYBACK_ROUTE(stream-index, dai-id)
 define(`DEVICE_PLAYBACK_ROUTE',
 `'
-`SectionGraph."NAME_PREFIX.$1 $3 Graph" {'
+`SectionGraph."NAME_PREFIX.$1 $2 Graph" {'
 `        index STR($1)'
 `        lines ['
-`                "NAME_PREFIX.logger$1, , $3 Audio Mixer"'
+`                "NAME_PREFIX.logger$1, , $2 Audio Mixer"'
 `                "NAME_PREFIX.i2s_rx$1, , NAME_PREFIX.logger$1"'
 `                "$2 MI2S Playback, , NAME_PREFIX.i2s_rx$1"'
 `        ]'
