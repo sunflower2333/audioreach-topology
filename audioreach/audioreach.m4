@@ -91,7 +91,9 @@ define(`MODULE_ID_PLACEHOLDER_ENCODER', `0x07001008') dnl
 define(`MODULE_ID_PLACEHOLDER_DECODER', `0x07001009') dnl
 define(`MODULE_ID_I2S_SINK', `0x0700100A') dnl
 define(`MODULE_ID_I2S_SOURCE', `0x0700100B') dnl
+define(`MODULE_ID_MFC', `0x07001015') dnl
 define(`MODULE_ID_VOL_CTRL', `0x0700101B') dnl
+define(`MODULE_ID_SMECNS_V2', `0x07001031') dnl
 dnl Linux frontend dai ids
 define(`FRONTEND_DAI_MULTIMEDIA1', `1') dnl
 define(`FRONTEND_DAI_MULTIMEDIA2', `2') dnl

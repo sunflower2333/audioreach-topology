@@ -45,13 +45,13 @@ dnl
 dnl STREAM_PLAYBACK_ROUTE(stream-index)
 define(`STREAM_PLAYBACK_ROUTE',
 `'
-`SectionGraph."NAME_PREFIX.$1 Graph" {'
-`        index STR($1)'
+`SectionGraph."NAME_PREFIX.$2 Graph" {'
+`        index STR($2)'
 `        lines ['
-`                "NAME_PREFIX.pcm_decoder$1, , NAME_PREFIX.wrsh_ep$1"'
-`                "NAME_PREFIX.pcm_converter$1, , NAME_PREFIX.pcm_decoder$1"'
-`                "NAME_PREFIX.vol_ctrl$1, , NAME_PREFIX.pcm_converter$1"'
-`                "NAME_PREFIX.logger$1, , NAME_PREFIX.vol_ctrl$1"'
+`                "NAME_PREFIX.pcm_decoder$2, , NAME_PREFIX.wrsh_ep$2"'
+`                "NAME_PREFIX.pcm_converter$2, , NAME_PREFIX.pcm_decoder$2"'
+`                "NAME_PREFIX.vol_ctrl$1, , NAME_PREFIX.pcm_converter$2"'
+`                "NAME_PREFIX.logger$2, , NAME_PREFIX.vol_ctrl$1"'
 `        ]'
 `}')
 
@@ -65,7 +65,7 @@ AR_CONTAINER(CONTAINER_INDEX, CONT_IID_START,  APM_CONTAINER_CAP_ID_CD, 8192, AP
 AR_MODULE_WRSH(MOD_INDEX, SG_INDEX, CONTAINER_INDEX,	WRSH_MODULE_IID,  0, 1, 0, 0, 0, 2, PCM_DAI_ID)
 AR_MODULE_PCMDEC(MOD_INDEX, SG_INDEX, CONTAINER_INDEX,	PCMDEC_MODULE_IID, 1, 1, 2, 1, 1, 2, PCM_INTERLEAVED)
 AR_MODULE_PCMCNV(MOD_INDEX, SG_INDEX, CONTAINER_INDEX,	PCMCNV_MODULE_IID, 1, 1, 2, 1, 1, 2, PCM_DEINTERLEAVED_UNPACKED)
-AR_MODULE_VOL_CTRL(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, VOLCTRL_MODULE_IID,1, 1, 2, 1, 1, 2)
+AR_MODULE_VOL_CTRL(PCM_DAI_ID, SG_INDEX, CONTAINER_INDEX, VOLCTRL_MODULE_IID,1, 1, 2, 1, 1, 2)
 AR_MODULE_LOG(MOD_INDEX,    SG_INDEX, CONTAINER_INDEX, 	LOG_MODULE_IID,    1, 1, 2, 1, 1, 2, 0x000019af, 1, 0)
 STREAM_PLAYBACK_MIXER(PCM_DAI_ID, SG_INDEX)
-STREAM_PLAYBACK_ROUTE(MOD_INDEX) 
+STREAM_PLAYBACK_ROUTE(PCM_DAI_ID, MOD_INDEX) 

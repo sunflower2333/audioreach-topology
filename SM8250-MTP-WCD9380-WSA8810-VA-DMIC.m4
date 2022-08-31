@@ -22,11 +22,11 @@ STREAM_SG_PCM_ADD(audioreach/subgraph-stream-vol-playback.m4, FRONTEND_DAI_MULTI
 	0x00004002, 0x00004002, 0x00006010)
 dnl Capture MultiMedia3
 STREAM_SG_PCM_ADD(audioreach/subgraph-stream-capture.m4, FRONTEND_DAI_MULTIMEDIA3,
-	`S16_LE', 48000, 48000, 2, 2,	
+	`S16_LE', 48000, 48000, 1, 2,	
 	0x00004003, 0x00004003, 0x00006020)
 dnl Capture MultiMedia4
 STREAM_SG_PCM_ADD(audioreach/subgraph-stream-capture.m4, FRONTEND_DAI_MULTIMEDIA4,
-	`S16_LE', 48000, 48000, 2, 2,	
+	`S16_LE', 48000, 48000, 1, 2,	
 	0x00004004, 0x00004004, 0x00006030)
 #
 #
@@ -61,13 +61,13 @@ DEVICE_SG_ADD(audioreach/subgraph-device-codec-dma-playback.m4, `RX_CODEC_DMA_RX
 dnl
 dnl VA Capture
 DEVICE_SG_ADD(audioreach/subgraph-device-codec-dma-capture.m4, `VA_CODEC_DMA_TX_0', VA_CODEC_DMA_TX_0,
-	`S16_LE', 48000, 48000, 2, 2,	
+	`S16_LE', 48000, 48000, 1, 2,	
 	LPAIF_INTF_TYPE_VA, CODEC_INTF_IDX_TX0, 0, DATA_FORMAT_FIXED_POINT,
 	0x00004008, 0x00004008, 0x00006080)
 dnl
 dnl WCDTX Capture
 DEVICE_SG_ADD(audioreach/subgraph-device-codec-dma-capture.m4, `TX_CODEC_DMA_TX_3', TX_CODEC_DMA_TX_3,
-	`S16_LE', 48000, 48000, 2, 2,	
+	`S16_LE', 48000, 48000, 1, 2,	
 	LPAIF_INTF_TYPE_RXTX, CODEC_INTF_IDX_TX3, 0, DATA_FORMAT_FIXED_POINT,
 	0x00004009, 0x00004009, 0x00006090)
 

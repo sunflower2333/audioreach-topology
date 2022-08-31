@@ -3,21 +3,17 @@ include(`util/pcm.m4') dnl
 include(`audioreach/subgraph.m4') dnl
 include(`audioreach/container.m4') dnl
 include(`audioreach/module_log.m4') dnl
-include(`audioreach/module_pcmenc.m4') dnl
-include(`audioreach/module_pcmcnv.m4') dnl
 include(`audioreach/module_codec_dma.m4') dnl
 include(`util/mixer.m4') dnl
 dnl
 #
 # SubGraph for Device Backend
 # 
-#             ________________________________________________
-#             |   Sub Graph                                    |
-# [KControl]->| [DEVICE-TX] <- [PCM CNV] <- [PCM-ENC] <- [DEVICE EP] |
-#  Switch     |________________________________________________|
+#             ___________________________
+#             |   Sub Graph              |
+# [KControl]->| [DEVICE-TX] <- [LOGGER]  |
+#  Switch     |__________________________|
 undefine(`CDC_DMA_MODULE_IID') dnl
-undefine(`PCMENC_MODULE_IID') dnl
-undefine(`PCMCNV_MODULE_IID') dnl
 undefine(`LOG_MODULE_IID') dnl
 undefine(`SG_INDEX') dnl
 undefine(`CONTAINER_INDEX') dnl
@@ -38,9 +34,7 @@ define(`DEVICE_DOMAIN_ID', APM_PROC_DOMAIN_ID_ADSP) dnl'
 define(`CONT_STACK_SIZE', 8192) dnl'
 
 define(`CDC_DMA_MODULE_IID', MOD_IID_START) dnl
-define(`PCMENC_MODULE_IID', eval(MOD_IID_START + 1)) dnl
-define(`PCMCNV_MODULE_IID', eval(MOD_IID_START + 2)) dnl
-define(`LOG_MODULE_IID', eval(MOD_IID_START + 3)) dnl
+define(`LOG_MODULE_IID', eval(MOD_IID_START + 1)) dnl
 define(`SG_INDEX', 1) dnl
 define(`CONTAINER_INDEX', 1) dnl
 define(`MOD_INDEX', 1) dnl
@@ -52,9 +46,7 @@ define(`DEVICE_CAPTURE_ROUTE',
 `        index STR($1)'
 `        lines ['
 `		"NAME_PREFIX.codec_dma_tx$1, , $2 Capture"' 
-`                "NAME_PREFIX.pcm_encoder$1, , NAME_PREFIX.codec_dma_tx$1"'
-`                "NAME_PREFIX.pcm_converter$1, , NAME_PREFIX.pcm_encoder$1"'
-`                "NAME_PREFIX.logger$1, , NAME_PREFIX.pcm_converter$1"'
+`                "NAME_PREFIX.logger$1, , NAME_PREFIX.codec_dma_tx$1"'
 `        ]'
 `}')
 
@@ -63,8 +55,6 @@ AR_SUBGRAPH(SG_INDEX, DEVICE_DAI_ID, SG_IID_START, DEVICE_PERF_MODE, DEVICE_DIRE
 AR_CONTAINER(CONTAINER_INDEX, CONT_IID_START, CONT_CAP, CONT_STACK_SIZE, CONT_POSITION, DEVICE_DOMAIN_ID)
 
 AR_MODULE_CODEC_DMA_TX(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, CDC_DMA_MODULE_IID, 0, 1, 0, 2, 0, 2, DEVICE_INTF_TYPE, DEVICE_INTF_INDEX, DEVICE_DATA_FORMAT, `DEVICE_NAME') 
-AR_MODULE_PCMENC(MOD_INDEX, SG_INDEX,       CONTAINER_INDEX, PCMENC_MODULE_IID,  1, 1, 2, 1, 1, 2, PCM_INTERLEAVED)
-AR_MODULE_PCMCNV(MOD_INDEX, SG_INDEX,       CONTAINER_INDEX, PCMCNV_MODULE_IID,  1, 1, 2, 1, 1, 2, PCM_DEINTERLEAVED_UNPACKED)
 AR_MODULE_LOG(   MOD_INDEX, SG_INDEX,       CONTAINER_INDEX, LOG_MODULE_IID,     1, 1, 2, 1, 1, 2, 0x000019ab, 1, 0)
 dnl kcontrol switch
 DEVICE_CAPTURE_MIXER(SG_INDEX, `DEVICE_NAME')
