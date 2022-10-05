@@ -4,6 +4,7 @@ include(`audioreach/subgraph.m4') dnl
 include(`audioreach/container.m4') dnl
 include(`audioreach/module_rdsh.m4') dnl
 include(`audioreach/module_pcmenc.m4') dnl
+include(`audioreach/module_mfc.m4') dnl
 include(`audioreach/module_pcmcnv.m4') dnl
 include(`audioreach/module_log.m4') dnl
 include(`util/mixer.m4') dnl
@@ -33,9 +34,10 @@ define(`PCM_DOMAIN_ID', APM_PROC_DOMAIN_ID_ADSP) dnl'
 define(`CONT_STACK_SIZE', 8192) dnl'
 
 define(`LOG_MODULE_IID', MOD_IID_START) dnl
-define(`PCMCNV_MODULE_IID', eval(MOD_IID_START + 1)) dnl
-define(`PCMENC_MODULE_IID', eval(MOD_IID_START + 2)) dnl
-define(`RDSH_MODULE_IID', eval(MOD_IID_START + 3)) dnl
+define(`MFC_MODULE_IID', eval(MOD_IID_START + 1)) dnl
+define(`PCMCNV_MODULE_IID', eval(MOD_IID_START + 2)) dnl
+define(`PCMENC_MODULE_IID', eval(MOD_IID_START + 3)) dnl
+define(`RDSH_MODULE_IID', eval(MOD_IID_START + 4)) dnl
 define(`SG_INDEX', 1) dnl
 define(`CONTAINER_INDEX', 1) dnl
 define(`MOD_INDEX', 1) dnl
@@ -47,7 +49,8 @@ define(`STREAM_CAPTURE_ROUTE',
 `        index STR($1)'
 `        lines ['
 `                "NAME_PREFIX.logger$1, , MultiMedia$2 Mixer"'
-`                "NAME_PREFIX.pcm_converter$1, , NAME_PREFIX.logger$1"'
+`                "NAME_PREFIX.mfc$1, , NAME_PREFIX.logger$1"'
+`                "NAME_PREFIX.pcm_converter$1, , NAME_PREFIX.mfc$1"'
 `                "NAME_PREFIX.pcm_encoder$1, , NAME_PREFIX.pcm_converter$1"'
 `                "NAME_PREFIX.rdsh_ep$1, , NAME_PREFIX.pcm_encoder$1"'
 `        ]'
@@ -60,9 +63,10 @@ AR_SUBGRAPH(SG_INDEX, PCM_DAI_ID, SG_IID_START, PCM_PERF_MODE, PCM_DIRECTION, CO
 AR_CONTAINER(CONTAINER_INDEX, CONT_IID_START,  CONT_CAP, CONT_STACK_SIZE, CONT_POSITION, PCM_DOMAIN_ID)
 
 dnl AR_MODULE_LOG(index, sgidx, container-idx, iid,               maxip-ports, max-op-ports, in-ports, outports, src-mod, src-port, dst-mod, dst-port,
-AR_MODULE_LOG(MOD_INDEX,    SG_INDEX, CONTAINER_INDEX, LOG_MODULE_IID,    1, 1, 2, 1, 1, 2, 0x000019af, 1, 0)
-AR_MODULE_PCMCNV(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, PCMCNV_MODULE_IID, 1, 1, 2, 1, 1, 2, PCM_INTERLEAVED)
-AR_MODULE_PCMENC(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, PCMENC_MODULE_IID, 1, 1, 2, 1, 1, 2, PCM_INTERLEAVED)
-AR_MODULE_RDSH(MOD_INDEX,   SG_INDEX, CONTAINER_INDEX, RDSH_MODULE_IID,   1, 0, 2, 0, 1, 0, PCM_DAI_ID)
+AR_MODULE_LOG(MOD_INDEX,    SG_INDEX, CONTAINER_INDEX, LOG_MODULE_IID,    1, 1, 2, 1, 1, 2, 0x000019af, 1, 0,MFC_MODULE_IID)
+AR_MODULE_MFC(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, MFC_MODULE_IID, 1, 1, 2, 1, 1, 2, PCMCNV_MODULE_IID)
+AR_MODULE_PCMCNV(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, PCMCNV_MODULE_IID, 1, 1, 2, 1, 1, 2, PCM_INTERLEAVED, PCMENC_MODULE_IID)
+AR_MODULE_PCMENC(MOD_INDEX, SG_INDEX, CONTAINER_INDEX, PCMENC_MODULE_IID, 1, 1, 2, 1, 1, 2, PCM_INTERLEAVED, RDSH_MODULE_IID)
+AR_MODULE_RDSH(MOD_INDEX,   SG_INDEX, CONTAINER_INDEX, RDSH_MODULE_IID,   1, 0, 2, 0, 1, 0, PCM_DAI_ID, NONE_IID)
 
 STREAM_CAPTURE_ROUTE(MOD_INDEX, PCM_DAI_ID) 
