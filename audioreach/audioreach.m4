@@ -232,3 +232,4 @@ define(`RX_CODEC_DMA_RX_6', `125') dnl
 define(`RX_CODEC_DMA_RX_7', `126') dnl
 define(`SND_SOC_AR_TPLG_FE_BE_GRAPH_CTL_MIX', `256') dnl
 define(`SND_SOC_AR_TPLG_VOL_CTL', `257') dnl
+define(`NONE_IID', `0x0') dnl

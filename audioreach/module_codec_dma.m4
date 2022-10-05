@@ -1,6 +1,6 @@
 include(`util/util.m4') dnl
 dnl AR_MODULE_CODEC_DMA_RX(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port,
-dnl hw-if-type, hw-if-idx, fmt, dev-name)
+dnl hw-if-type, hw-if-idx, fmt, dev-name, dst-iid)
 define(`AR_MODULE_CODEC_DMA_RX',
 `'
 `SectionVendorTuples."NAME_PREFIX.codec_dma_rx$1_tuples" {'
@@ -15,6 +15,8 @@ define(`AR_MODULE_CODEC_DMA_RX',
 `                AR_TKN_U32_MODULE_OUT_PORTS STR($8)'
 `                AR_TKN_U32_MODULE_SRC_OP_PORT_ID STR($9)'
 `                AR_TKN_U32_MODULE_DST_IN_PORT_ID STR($10)'
+`                AR_TKN_U32_MODULE_SRC_INSTANCE_ID STR($4)'
+`                AR_TKN_U32_MODULE_DST_INSTANCE_ID STR($15)'
 `                AR_TKN_U32_MODULE_HW_IF_TYPE STR($11)'
 `                AR_TKN_U32_MODULE_HW_IF_IDX STR($12)'
 `                AR_TKN_U32_MODULE_FMT_DATA STR($13)'
@@ -39,7 +41,7 @@ define(`AR_MODULE_CODEC_DMA_RX',
 `}') dnl
 dnl
 dnl AR_MODULE_CODEC_DMA_TX(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port,
-dnl hw-if-type, hw-if-idx, fmt, dev-name)
+dnl hw-if-type, hw-if-idx, fmt, dev-name, dst-iid)
 define(`AR_MODULE_CODEC_DMA_TX',
 `'
 `SectionVendorTuples."NAME_PREFIX.codec_dma_tx$1_tuples" {'
@@ -54,6 +56,8 @@ define(`AR_MODULE_CODEC_DMA_TX',
 `                AR_TKN_U32_MODULE_OUT_PORTS STR($8)'
 `                AR_TKN_U32_MODULE_SRC_OP_PORT_ID STR($9)'
 `                AR_TKN_U32_MODULE_DST_IN_PORT_ID STR($10)'
+`                AR_TKN_U32_MODULE_SRC_INSTANCE_ID STR($4)'
+`                AR_TKN_U32_MODULE_DST_INSTANCE_ID STR($15)'
 `                AR_TKN_U32_MODULE_HW_IF_TYPE STR($11)'
 `                AR_TKN_U32_MODULE_HW_IF_IDX STR($12)'
 `                AR_TKN_U32_MODULE_FMT_DATA STR($13)'

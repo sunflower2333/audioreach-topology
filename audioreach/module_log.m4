@@ -1,6 +1,6 @@
 include(`util/util.m4') dnl
 dnl AR_MODULE_LOG(index, sgidx, container-idx, iid,  maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port,
-dnl log-code, log-tap-point, log-mode)
+dnl log-code, log-tap-point, log-mode, dst-iid)
 define(`AR_MODULE_LOG',
 `'
 `SectionVendorTuples."NAME_PREFIX.logger$1_tuples" {'
@@ -15,6 +15,8 @@ define(`AR_MODULE_LOG',
 `                AR_TKN_U32_MODULE_OUT_PORTS STR($8)'
 `                AR_TKN_U32_MODULE_SRC_OP_PORT_ID STR($9)'
 `                AR_TKN_U32_MODULE_DST_IN_PORT_ID STR($10)'
+`                AR_TKN_U32_MODULE_SRC_INSTANCE_ID STR($4)'
+`                AR_TKN_U32_MODULE_DST_INSTANCE_ID STR($14)'
 `                AR_TKN_U32_MODULE_LOG_CODE STR($11)'
 `                AR_TKN_U32_MODULE_LOG_TAP_POINT_ID STR($12)'
 `                AR_TKN_U32_MODULE_LOG_MODE STR($13)'

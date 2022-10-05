@@ -1,5 +1,5 @@
 include(`util/util.m4') dnl
-dnl AR_MODULE_VOL_CTRL(index, sgidx, container-idx, iid,  maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port,
+dnl AR_MODULE_VOL_CTRL(index, sgidx, container-idx, iid,  maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port, dist-iid
 define(`AR_MODULE_VOL_CTRL',
 `SectionVendorTuples."NAME_PREFIX.vol_ctrl$1_tuples" {'
 `        tokens "audioreach_tokens"'
@@ -13,6 +13,8 @@ define(`AR_MODULE_VOL_CTRL',
 `                AR_TKN_U32_MODULE_OUT_PORTS STR($8)'
 `                AR_TKN_U32_MODULE_SRC_OP_PORT_ID STR($9)'
 `                AR_TKN_U32_MODULE_DST_IN_PORT_ID STR($10)'
+`                AR_TKN_U32_MODULE_SRC_INSTANCE_ID STR($4)'
+`                AR_TKN_U32_MODULE_DST_INSTANCE_ID STR($11)'
 `        }'
 `}'
 `'
