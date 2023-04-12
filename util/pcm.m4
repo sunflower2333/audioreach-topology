@@ -53,3 +53,31 @@ define(`AR_PCM_CAPTURE',
 `                capabilities "MultiMedia$1 Capture"'
 `        }'
 `}')
+dnl AR_COMPESS_PLAYBACK(index, formats, rate_min, rate_max, ch_min, ch_max)
+define(`AR_COMPESS_PLAYBACK',
+`'
+`SectionPCMCapabilities."MultiMedia$1 Playback" {'
+`        formats STR($2)'
+`        rate_min STR($3)'
+`        rate_max STR($4)'
+`        channels_min STR($5)'
+`        channels_max STR($6)'
+`}'
+`'
+`SectionPCM."MultiMedia$1 Playback" {'
+`'
+`        index STR($1)'
+`        compress "true"'
+`'
+`        # used for binding to the PCM'
+`        id STR($1)'
+`'
+`        dai."MultiMedia$1 Playback" {'
+`                id STR($1)'
+`        }'
+`'
+`        pcm."playback" {'
+`                capabilities "MultiMedia$1 Playback"'
+`        }'
+`}') dnl
+dnl
