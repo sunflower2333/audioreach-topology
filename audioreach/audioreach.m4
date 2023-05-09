@@ -94,6 +94,7 @@ define(`MODULE_ID_I2S_SOURCE', `0x0700100B') dnl
 define(`MODULE_ID_MFC', `0x07001015') dnl
 define(`MODULE_ID_VOL_CTRL', `0x0700101B') dnl
 define(`MODULE_ID_SMECNS_V2', `0x07001031') dnl
+define(`MODULE_ID_DISPLAY_PORT_SINK', `0x07001069') dnl
 dnl Linux frontend dai ids
 define(`FRONTEND_DAI_MULTIMEDIA1', `1') dnl
 define(`FRONTEND_DAI_MULTIMEDIA2', `2') dnl
@@ -230,6 +231,16 @@ define(`RX_CODEC_DMA_RX_5', `123') dnl
 define(`TX_CODEC_DMA_TX_5', `124') dnl
 define(`RX_CODEC_DMA_RX_6', `125') dnl
 define(`RX_CODEC_DMA_RX_7', `126') dnl
+define(`QUINARY_MI2S_RX', `127') dnl
+define(`QUINARY_MI2S_TX', `128') dnl
+define(`DISPLAY_PORT_RX_0', `104') dnl
+define(`DISPLAY_PORT_RX_1', `129') dnl
+define(`DISPLAY_PORT_RX_2', `130') dnl
+define(`DISPLAY_PORT_RX_3', `131') dnl
+define(`DISPLAY_PORT_RX_4', `132') dnl
+define(`DISPLAY_PORT_RX_5', `133') dnl
+define(`DISPLAY_PORT_RX_6', `134') dnl
+define(`DISPLAY_PORT_RX_7', `135') dnl
 define(`SND_SOC_AR_TPLG_FE_BE_GRAPH_CTL_MIX', `256') dnl
 define(`SND_SOC_AR_TPLG_VOL_CTL', `257') dnl
 define(`NONE_IID', `0x0') dnl
