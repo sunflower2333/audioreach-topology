@@ -7,14 +7,22 @@ define(`APM_SUB_GRAPH_DIRECTION_RX', `0x2') dnl
 define(`APM_SUB_GRAPH_SID_AUDIO_PLAYBACK', `0x1') dnl
 define(`APM_SUB_GRAPH_SID_AUDIO_RECORD', `0x2') dnl
 define(`APM_SUB_GRAPH_SID_VOICE_CALL', `0x3') dnl
-dnl container capability ID Pre/Post Processing (PP) 
+dnl container capability ID Pre/Post Processing (PP) (legacy)
 define(`APM_CONTAINER_CAP_ID_PP', `0x1') dnl
-dnl container capability ID Compression/Decompression (CD) 
+dnl container capability ID Compression/Decompression (CD) (legacy)
 define(`APM_CONTAINER_CAP_ID_CD', `0x2') dnl
-dnl container capability ID End Point(EP) 
+dnl container capability ID End Point(EP) (legacy)
 define(`APM_CONTAINER_CAP_ID_EP', `0x3') dnl
-dnl container capability ID Offload (OLC) 
+dnl container capability ID Offload (OLC) (legacy)
 define(`APM_CONTAINER_CAP_ID_OLC', `0x4') dnl
+dnl Container type identifier for a specialized container
+define(`APM_CONTAINER_TYPE_ID_SC', `0x0B001000') dnl
+dnl Container type identifier for a generic container
+define(`APM_CONTAINER_TYPE_ID_GC', `0x0B001001') dnl
+dnl Container type identifier for an offload container
+define(`APM_CONTAINER_TYPE_ID_OLC', `0x0B001002') dnl
+dnl Container type identifier for a wear container
+define(`APM_CONTAINER_TYPE_ID_WC', `0x0B001003') dnl
 define(`APM_CONT_GRAPH_POS_STREAM', `0x1') dnl
 dnl container graph position Per Stream Per Device
 define(`APM_CONT_GRAPH_POS_PER_STR_PER_DEV', `0x2') dnl
