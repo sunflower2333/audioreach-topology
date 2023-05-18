@@ -1,6 +1,6 @@
 include(`util/util.m4') dnl
 dnl AR_MODULE_DISPLAY_PORT_SINK(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port,
-dnl hw-if-type, hw-if-idx, dev-name, dst-iid)
+dnl hw-if-type, hw-if-idx, fmt, dev-name, dst-iid)
 define(`AR_MODULE_DISPLAY_PORT_SINK',
 `'
 `SectionVendorTuples."NAME_PREFIX.display_port_rx$1_tuples" {'
@@ -16,7 +16,8 @@ define(`AR_MODULE_DISPLAY_PORT_SINK',
 `                AR_TKN_U32_MODULE_SRC_OP_PORT_ID STR($9)'
 `                AR_TKN_U32_MODULE_DST_IN_PORT_ID STR($10)'
 `                AR_TKN_U32_MODULE_SRC_INSTANCE_ID STR($4)'
-`                AR_TKN_U32_MODULE_DST_INSTANCE_ID STR($14)'
+`                AR_TKN_U32_MODULE_FMT_DATA STR($13)'
+`                AR_TKN_U32_MODULE_DST_INSTANCE_ID STR($15)'
 `        }'
 `}'
 `'
@@ -28,7 +29,7 @@ define(`AR_MODULE_DISPLAY_PORT_SINK',
 `        index STR($1)'
 `        type "aif_in"'
 `        no_pm "true"'
-`        stream_name "$13 Playback"'
+`        stream_name "$14 Playback"'
 `        subseq "10"'
 `        data ['
 `                "NAME_PREFIX.sub_graph$2_data"'
