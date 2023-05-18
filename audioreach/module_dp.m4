@@ -17,8 +17,6 @@ define(`AR_MODULE_DISPLAY_PORT_SINK',
 `                AR_TKN_U32_MODULE_DST_IN_PORT_ID STR($10)'
 `                AR_TKN_U32_MODULE_SRC_INSTANCE_ID STR($4)'
 `                AR_TKN_U32_MODULE_DST_INSTANCE_ID STR($14)'
-`                AR_TKN_U32_MODULE_DP_MST_IDX STR($11)'
-`                AR_TKN_U32_MODULE_DP_TX_IDX STR($12)'
 `        }'
 `}'
 `'
