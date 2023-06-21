@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 include(`audioreach/audioreach.m4') dnl
 include(`util/pcm.m4') dnl
 include(`audioreach/subgraph.m4') dnl

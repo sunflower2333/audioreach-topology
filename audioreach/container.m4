@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 include(`util/util.m4') dnl
 dnl AR_CONTAINER(index, container-id, cap-id, stack-size, graph-pos, domain)
 define(`AR_CONTAINER',

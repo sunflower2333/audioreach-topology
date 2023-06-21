@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 `SectionVendorTokens."audioreach_tokens" {'
 `	AR_TKN_DAI_INDEX "1"'
 `	AR_TKN_U32_SUB_GRAPH_INSTANCE_ID "2"'

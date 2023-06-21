@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 dnl stream_device_rout: list the devices or streams from argument list
 define(`stream_device_route',
 `ifelse(`$#', `1', ,

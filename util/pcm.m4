@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 include(`util/util.m4') dnl
 dnl AR_PCM_PLAYBACK(index, formats, rate_min, rate_max, ch_min, ch_max)
 define(`AR_PCM_PLAYBACK',

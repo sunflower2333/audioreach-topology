@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 include(`util/util.m4') dnl
 dnl AR_SUBGRAPH(index, graph-id, sub-graph-id, perf-mode, dir, sid)
 define(`AR_SUBGRAPH',

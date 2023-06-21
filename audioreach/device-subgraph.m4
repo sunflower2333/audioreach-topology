@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 dnl DEVICE_SG_ADD(stream, name, stream-id, stream-index, 
 dnl 	format, min-rate, max-rate, min-channels, max-channels,
 dnl	domain, stack-size,

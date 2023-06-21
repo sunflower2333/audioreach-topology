@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 include(`audioreach/audioreach.m4') dnl
 dnl stream_device_list: list the devices or streams from argument list
 define(`stream_device_list',

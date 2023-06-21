@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 include(`util/util.m4') dnl
 dnl AR_MODULE_CODEC_DMA_RX(index, sgidx, container-idx, iid, maxip-ports, max-op-ports, in-ports, outports, src-port, dst-port,
 dnl hw-if-type, hw-if-idx, fmt, dev-name, dst-iid)

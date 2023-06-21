@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 define(`APM_SG_PERF_MODE_LOW_POWER', `0x1') dnl
 define(`APM_SG_PERF_MODE_LOW_LATENCY', `0x2') dnl
 define(`APM_SUB_GRAPH_DIRECTION_TX', `0x1') dnl

@@ -1,3 +1,5 @@
+# Copyright, Linaro Ltd, 2023
+# SPDX-License-Identifier: BSD-3-Clause
 dnl STREAM_SG_PCM_ADD(stream, stream-dai-id,  
 dnl 	format, min-rate, max-rate, min-channels, max-hcannels,
 dnl	sg-iid-start, cont-iid-start, mod-iid-start)
