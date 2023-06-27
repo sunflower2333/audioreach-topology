@@ -106,14 +106,14 @@ define(`MODULE_ID_VOL_CTRL', `0x0700101B') dnl
 define(`MODULE_ID_SMECNS_V2', `0x07001031') dnl
 define(`MODULE_ID_DISPLAY_PORT_SINK', `0x07001069') dnl
 dnl Linux frontend dai ids
-define(`FRONTEND_DAI_MULTIMEDIA1', `1') dnl
-define(`FRONTEND_DAI_MULTIMEDIA2', `2') dnl
-define(`FRONTEND_DAI_MULTIMEDIA3', `3') dnl
-define(`FRONTEND_DAI_MULTIMEDIA4', `4') dnl
-define(`FRONTEND_DAI_MULTIMEDIA5', `5') dnl
-define(`FRONTEND_DAI_MULTIMEDIA6', `6') dnl
-define(`FRONTEND_DAI_MULTIMEDIA7', `7') dnl
-define(`FRONTEND_DAI_MULTIMEDIA8', `8') dnl
+define(`FRONTEND_DAI_MULTIMEDIA1', `0') dnl
+define(`FRONTEND_DAI_MULTIMEDIA2', `1') dnl
+define(`FRONTEND_DAI_MULTIMEDIA3', `2') dnl
+define(`FRONTEND_DAI_MULTIMEDIA4', `3') dnl
+define(`FRONTEND_DAI_MULTIMEDIA5', `4') dnl
+define(`FRONTEND_DAI_MULTIMEDIA6', `5') dnl
+define(`FRONTEND_DAI_MULTIMEDIA7', `6') dnl
+define(`FRONTEND_DAI_MULTIMEDIA8', `7') dnl
 dnl Audio Process Manager (APM) virtual ports IDs 
 define(`HDMI_RX', `1') dnl
 define(`SLIMBUS_0_RX', `2') dnl

@@ -10,7 +10,7 @@ dnl
 dnl STREAM_DEVICE_CAPTURE_MIXER(stream-index)
 define(`STREAM_DEVICE_CAPTURE_MIXER',
 `'
-`SectionWidget."MultiMedia$1 Mixer" {'
+`SectionWidget."`MultiMedia'eval($1 + 1)` Mixer'" {'
 `    	reg "-1"'
 `        index STR($1)'
 `        type "mixer"'
@@ -69,7 +69,7 @@ dnl
 dnl STREAM_PLAYBACK_MIXER(stream-index, sg-index)
 define(`STREAM_PLAYBACK_MIXER',
 `'
-`SectionControlMixer."MultiMedia$1" {'
+`SectionControlMixer."`MultiMedia'eval($1 + 1)" {'
 `	reg "-1"'
 `	index STR($1)'
 `	max "1"'

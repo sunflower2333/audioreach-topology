@@ -50,7 +50,7 @@ define(`STREAM_CAPTURE_ROUTE',
 `SectionGraph."NAME_PREFIX.$1 Graph" {'
 `        index STR($1)'
 `        lines ['
-`                "NAME_PREFIX.logger$1, , MultiMedia$2 Mixer"'
+`                "NAME_PREFIX.logger$1, , `MultiMedia'eval($2 + 1)` Mixer'"'
 `                "NAME_PREFIX.mfc$1, , NAME_PREFIX.logger$1"'
 `                "NAME_PREFIX.pcm_converter$1, , NAME_PREFIX.mfc$1"'
 `                "NAME_PREFIX.pcm_encoder$1, , NAME_PREFIX.pcm_converter$1"'

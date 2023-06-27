@@ -28,7 +28,7 @@ define(`AR_MODULE_RDSH',
 `        index STR($1)'
 `        type "aif_out"'
 `        no_pm "true"'
-`        stream_name "MultiMedia$11 Capture"'
+`        stream_name "`MultiMedia'eval($11 + 1)` Capture'"'
 `        subseq "10"'
 `        data ['
 `                "NAME_PREFIX.sub_graph$2_data"'

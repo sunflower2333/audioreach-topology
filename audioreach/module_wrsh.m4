@@ -28,7 +28,7 @@ define(`AR_MODULE_WRSH',
 `        index STR($1)'
 `        type "aif_in"'
 `        no_pm "true"'
-`        stream_name "MultiMedia$11 Playback"'
+`        stream_name "`MultiMedia'eval($11 + 1)` Playback'"'
 `        subseq "10"'
 `        data ['
 `                "NAME_PREFIX.sub_graph$2_data"'
