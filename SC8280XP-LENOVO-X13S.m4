@@ -67,13 +67,13 @@ dnl
 dnl Display port0 Playback
 DEVICE_SG_ADD(audioreach/subgraph-device-display-port-playback.m4, `DISPLAY_PORT_RX_0', DISPLAY_PORT_RX_0,
 	`S16_LE', 48000, 48000, 2, 2,	
-	0, 0, 0, DATA_FORMAT_FIXED_POINT,
+	0, 0, 0, 0,
 	0x00004012, 0x00004012, 0x00006120, `DISPLAY_PORT_RX_0')
 dnl
 dnl Display port1 Playback
 DEVICE_SG_ADD(audioreach/subgraph-device-display-port-playback.m4, `DISPLAY_PORT_RX_1', DISPLAY_PORT_RX_1,
 	`S16_LE', 48000, 48000, 2, 2,	
-	0, 0, 0, DATA_FORMAT_FIXED_POINT,
+	0, 0, 0, 0,
 	0x00004013, 0x00004013, 0x00006130, `DISPLAY_PORT_RX_1')
 dnl VA Capture
 DEVICE_SG_ADD(audioreach/subgraph-device-codec-dma-capture.m4, `VA_CODEC_DMA_TX_0', VA_CODEC_DMA_TX_0,
