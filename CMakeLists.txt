@@ -10,6 +10,7 @@ set(TPLGS
 	"SM8550-QRD\;SM8550-QRD\;qcom/sm8550\;"
 	"SC8280XP-LENOVO-X13S\;audioreach\;qcom/sc8280xp/LENOVO/21BX\;"
 	"Google-SC7180-WSA-Speakers-SEC-I2S-VA-DMIC-WCD-TX3\;Google-SC7180-WSA-Speakers-SEC-I2S-VA-DMIC-WCD-TX3\;qcom/sc7180\;"
+	"X1E80100-CRD\;X1E80100-CRD\;qcom/x1e80100\;"
 )
 
 add_custom_target(topologies ALL)
