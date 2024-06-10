@@ -28,7 +28,7 @@ STREAM_SG_PCM_ADD(audioreach/subgraph-stream-capture.m4, FRONTEND_DAI_MULTIMEDIA
 	0x00004003, 0x00004003, 0x00006020, `110000')
 dnl Capture MultiMedia4
 STREAM_SG_PCM_ADD(audioreach/subgraph-stream-capture.m4, FRONTEND_DAI_MULTIMEDIA4,
-	`S16_LE', 48000, 48000, 1, 2,
+	`S16_LE', 48000, 48000, 1, 4,
 	0x00004004, 0x00004004, 0x00006030, `110000')
 #
 #
@@ -69,7 +69,7 @@ DEVICE_SG_ADD(audioreach/subgraph-device-display-port-playback.m4, `DISPLAY_PORT
 dnl
 dnl VA Capture
 DEVICE_SG_ADD(audioreach/subgraph-device-codec-dma-capture.m4, `VA_CODEC_DMA_TX_0', VA_CODEC_DMA_TX_0,
-	`S16_LE', 48000, 48000, 1, 2,
+	`S16_LE', 48000, 48000, 1, 4,
 	LPAIF_INTF_TYPE_VA, CODEC_INTF_IDX_TX0, 0, DATA_FORMAT_FIXED_POINT,
 	0x00004018, 0x00004018, 0x00006180)
 dnl
