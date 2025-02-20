@@ -58,7 +58,7 @@ define(`AR_PCM_CAPTURE',
 dnl AR_COMPESS_PLAYBACK(index, formats, rate_min, rate_max, ch_min, ch_max)
 define(`AR_COMPESS_PLAYBACK',
 `'
-`SectionPCMCapabilities."MultiMedia$1 Playback" {'
+`SectionPCMCapabilities."`MultiMedia'eval($1 +1 )` Playback'" {'
 `        formats STR($2)'
 `        rate_min STR($3)'
 `        rate_max STR($4)'
@@ -66,7 +66,7 @@ define(`AR_COMPESS_PLAYBACK',
 `        channels_max STR($6)'
 `}'
 `'
-`SectionPCM."MultiMedia$1 Playback" {'
+`SectionPCM."`MultiMedia'eval($1 + 1)` Playback'" {'
 `'
 `        index STR($1)'
 `        compress "true"'
@@ -74,12 +74,12 @@ define(`AR_COMPESS_PLAYBACK',
 `        # used for binding to the PCM'
 `        id STR($1)'
 `'
-`        dai."MultiMedia$1 Playback" {'
+`        dai."`MultiMedia'eval($1 + 1)` Playback'" {'
 `                id STR($1)'
 `        }'
 `'
 `        pcm."playback" {'
-`                capabilities "MultiMedia$1 Playback"'
+`                capabilities "`MultiMedia'eval($1 + 1)` Playback'"'
 `        }'
 `}') dnl
 dnl
