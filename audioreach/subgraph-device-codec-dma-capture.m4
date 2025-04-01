@@ -19,6 +19,7 @@ undefine(`CDC_DMA_MODULE_IID') dnl
 undefine(`LOG_MODULE_IID') dnl
 undefine(`SG_INDEX') dnl
 undefine(`CONTAINER_INDEX') dnl
+undefine(`MOD_INDEX') dnl
 
 undefine(`DEVICE_PERF_MODE') dnl
 undefine(`DEVICE_DIRECTION') dnl
