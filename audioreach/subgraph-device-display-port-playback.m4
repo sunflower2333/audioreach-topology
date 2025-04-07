@@ -20,9 +20,10 @@ undefine(`DISPLAY_PORT_SINK_MODULE_IID') dnl
 undefine(`LOG_MODULE_IID') dnl
 undefine(`SG_INDEX') dnl
 undefine(`CONTAINER_INDEX') dnl
+undefine(`MOD_INDEX') dnl
 
 undefine(`DEVICE_PERF_MODE') dnl
-undefine(`DEICE_DIRECTION') dnl
+undefine(`DEVICE_DIRECTION') dnl
 undefine(`CONT_SENARIO_ID') dnl
 undefine(`CONT_CAP') dnl
 undefine(`CONT_POSITION') dnl
